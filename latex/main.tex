@@ -5,6 +5,7 @@
 % Images.
 \usepackage{graphicx}
 \usepackage[hidelinks, bookmarks=true]{hyperref}
+\usepackage{float}
 % Encoding.
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
@@ -98,7 +99,7 @@
 
 \section{Introductory Note}
 
-\tab This assignment consists in the use of the "traceroute" command followed by the domain \textbf{"www.cmu.edu"}, and interpreting the results obtained.  
+\tab This assignment consists in the use of the \textit{traceroute} command followed by the domain "www.cmu.edu", and interpreting the results obtained.  
 
 \noindent The specific objectives of this assignment are the following:
 
@@ -111,7 +112,7 @@
 
 \tab This assignment addresses things that can happen during a web connection.
 
-Using the "traceroute" command, we will be able to analyze how a web connection works, and the path that the packages take in that connection.
+Using the \textit{traceroute} command, we will be able to analyze how a web connection works, and the path that the packages take in that connection.
 From that analysis, we will be able to reach a conclusion about the previously referred paths, and the hops of the connection, referring also the players involved in each hop.
 
 This assignment will also contemplate some other points, such as the operations, processes, techniques and technologies involved in each step, trying to situate these in the framework of the ISO OSI model, as well as some possible social and economic implications triggered by the point previously mentioned.
@@ -176,6 +177,19 @@ Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo p
 
 However, Traceroute messages are often blocked in the Internet by routers, making this tool very inaccurate in some cases.
 
+\section{Executing the \textit{traceroute} command}
+
+\tab Executing the command \textit{traceroute -I www.cmu.edu}, we obtain the following output:
+
+%Added [H] after so that image is placed after the text above
+%This is only possible by adding also \usepackage{float} to the preamble
+\begin{figure}[H]
+    \includegraphics[width=1 \textwidth]{images/tracerouteUA.png}
+    \caption{Output of the \textit{traceroute} command}
+\end{figure}
+
+\subsection{Detailed interpretation of the executed command's results}
+
 \vspace*{\fill}
 \begin{center}
     \includegraphics[width=1 \textwidth]{images/traceroute_part1.png}
@@ -188,9 +202,10 @@ However, Traceroute messages are often blocked in the Internet by routers, makin
 \end{center}
 \vspace*{\fill}\clearpage
 
-\begin{center}
+\begin{figure}
     \includegraphics[width=1 \textwidth]{images/traceroute_part3.png}
-\end{center}
+    \caption{Details of \textit{traceroute} interpretation}
+\end{figure}
 
 % Add "References" to table of contents
 \addcontentsline{toc}{section}{References}
