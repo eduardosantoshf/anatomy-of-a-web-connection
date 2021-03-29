@@ -40,6 +40,13 @@
 \renewcommand{\footrulewidth}{0.1pt}
 % Rename table of contents title to "Index"
 \renewcommand{\contentsname}{\normalsize Index \vspace{0.6cm}}
+% Add text with hyperlink
+\usepackage{hyperref}
+%\hypersetup{
+%    colorlinks=true,
+%    linkcolor=blue,
+%    filecolor=magenta
+%}
 % Water mark
 \newsavebox\mybox
 \usepackage[printwatermark]{xwatermark}
@@ -140,6 +147,13 @@ Websites save information about its users in files, those files are called cooki
 
 A web browser should not be confused with a search engine, the last one being a website that contains links to other websites.
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.7 \textwidth]{images/browsers.png}
+        \caption{\href{https://www.google.com/url?sa=i&url=https\%3A\%2F\%2Fventurebeat.com\%2F2020\%2F01\%2F15\%2Fbrowser-benchmark-battle-january-2020-chrome-firefox-edge-brave\%2F&psig=AOvVaw1kepSAmHxWnyx7E\_xnjq2a&ust=1617098633832000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjgy\_-f1e8CFQAAAAAdAAAAABAD}{\underline{Some of the most used browsers at the moment}}}
+    \end{center}
+\end{figure}
+
 \subsection{TCP/IP}
 
 \tab TCP\footnote{Transmission Control Protocol} and IP\footnote{Internet Protocol} are often referred together as TCP/IP, an Internet protocol suite. This suite is a set of communications protocols, establishing how data should be packetized, addressed, transmitted, routed, and received in an end-to-end data communication.
@@ -163,6 +177,13 @@ We've seen that web browsers communicate through IP addresses, but what is an IP
 
 An IP address is an unique address that identifies a device on the Internet or a local network. Using this address, machines can find each other on that network.
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=0.7 \textwidth]{images/dns.png}
+        \caption{\href{https://www.google.com/url?sa=i&url=https\%3A\%2F\%2Fwww.pcmag.com\%2Fhow-to\%2Fhow-and-why-to-change-your-dns-server&psig=AOvVaw0kvZbAUtDVX3KBUpHmIdu4&ust=1617099982879000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCEmYOl1e8CFQAAAAAdAAAAABAD}{\underline{DNS}}}
+    \end{center}
+\end{figure}
+
 \subsection{HTTP}
 
 \tab HTTP\footnote{Hypertext Transfer Protocol} is an application-layer protocol used when transmitting hypermedia documents (such as HTML\footnote{Hypertext Markup Language}). It was designed for communications between web browsers and web servers, although it can be used for other purposes. 
@@ -185,7 +206,7 @@ However, Traceroute messages are often blocked in the Internet by routers, makin
 %This is only possible by adding also \usepackage{float} to the preamble
 \begin{figure}[H]
     \includegraphics[width=1 \textwidth]{images/tracerouteUA.png}
-    \caption{Output of the \textit{traceroute} command}
+    \caption{Output of the \textit{traceroute} command, executed inside UA's network, on 26/03/2021, at 15h12}
 \end{figure}
 
 \subsection{Detailed interpretation of the executed command's results}
@@ -206,6 +227,10 @@ However, Traceroute messages are often blocked in the Internet by routers, makin
     \includegraphics[width=1 \textwidth]{images/traceroute_part3.png}
     \caption{Details of \textit{traceroute} interpretation}
 \end{figure}
+
+
+
+
 
 % Add "References" to table of contents
 \addcontentsline{toc}{section}{References}
