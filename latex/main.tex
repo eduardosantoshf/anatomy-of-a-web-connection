@@ -9,6 +9,8 @@
 % Encoding.
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+% Allow multiline comments
+\usepackage{verbatim} 
 % Helvetic font.
 \usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault} 
@@ -149,7 +151,7 @@ A web browser should not be confused with a search engine, the last one being a 
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.7 \textwidth]{images/browsers.png}
+        \includegraphics[width=0.3 \textwidth]{images/browsers.png}
         \caption{\href{https://www.google.com/url?sa=i&url=https\%3A\%2F\%2Fventurebeat.com\%2F2020\%2F01\%2F15\%2Fbrowser-benchmark-battle-january-2020-chrome-firefox-edge-brave\%2F&psig=AOvVaw1kepSAmHxWnyx7E\_xnjq2a&ust=1617098633832000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJjgy\_-f1e8CFQAAAAAdAAAAABAD}{\underline{Some of the most used browsers at the moment}}}
     \end{center}
 \end{figure}
@@ -179,7 +181,7 @@ An IP address is an unique address that identifies a device on the Internet or a
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.7 \textwidth]{images/dns.png}
+        \includegraphics[width=0.6 \textwidth]{images/dns.png}
         \caption{\href{https://www.google.com/url?sa=i&url=https\%3A\%2F\%2Fwww.pcmag.com\%2Fhow-to\%2Fhow-and-why-to-change-your-dns-server&psig=AOvVaw0kvZbAUtDVX3KBUpHmIdu4&ust=1617099982879000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCEmYOl1e8CFQAAAAAdAAAAABAD}{\underline{DNS}}}
     \end{center}
 \end{figure}
@@ -198,39 +200,60 @@ Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo p
 
 However, Traceroute messages are often blocked in the Internet by routers, making this tool very inaccurate in some cases.
 
-\section{Executing the \textit{traceroute} command}
+\subsection{Executing the \textit{traceroute} command}
 
 \tab Executing the command \textit{traceroute -I www.cmu.edu}, we obtain the following output:
 
 %Added [H] after so that image is placed after the text above
 %This is only possible by adding also \usepackage{float} to the preamble
 \begin{figure}[H]
-    \includegraphics[width=1 \textwidth]{images/tracerouteUA.png}
-    \caption{Output of the \textit{traceroute} command, executed inside UA's network, on 26/03/2021, at 15h12}
+    \includegraphics[width=1 \textwidth]{images/tracerouteHome.png}
+    \caption{Output of the \textit{traceroute} command, executed inside home network, on 29/03/2021, at 19h27}
 \end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=1 \textwidth]{images/tracerouteUA.png}
+    \caption{Output of the \textit{traceroute} command, executed inside University of Aveiro's network, on 26/03/2021, at 15h12}
+    \label{tracerouteUA}
+\end{figure}
+
+
+The \textit{-I} parameter was used because, instead UDP\footnote{User Datagram Protocol}, what we wanted is to use ICMP echo, to prevent getting to many "Request Timed Out" messages. 
+
+The ICMP echo requests and the ICMP echo reply messages are commonly known as ping messages. Ping is a computer network administration software utility and is used to test if a host is reachable on an IP network. This utility operates by sending this ICMP echo request packets to the target host and waiting for it to reply through an ICMP echo reply.
 
 \subsection{Detailed interpretation of the executed command's results}
 
 \vspace*{\fill}
-\begin{center}
-    \includegraphics[width=1 \textwidth]{images/traceroute_part1.png}
-\end{center}
-\vspace*{\fill}\clearpage
+    \begin{center}
+        \includegraphics[width=1 \textwidth]{images/traceroute_part1.png}
+    \end{center}
+\vspace*{\fill}
 
 \vspace*{\fill}
-\begin{center}
-    \includegraphics[width=1 \textwidth]{images/traceroute_part2.png}
-\end{center}
-\vspace*{\fill}\clearpage
+    \begin{figure}[t]
+        \includegraphics[width=1 \textwidth]{images/traceroute_part2.png}
+        \caption{Table containing details of the \textit{traceroute} command paths, for both University of Aveiro and home networks}
+    \end{figure}
+\vspace*{\fill}
 
-\begin{figure}
-    \includegraphics[width=1 \textwidth]{images/traceroute_part3.png}
-    \caption{Details of \textit{traceroute} interpretation}
-\end{figure}
+\subsubsection{Identifying the local of each IP address}
+
+\tab To identify the local of an IP address, a tool called \textit{IP Tracker} was used. This tool, which can be accessed through the web, tracks/traces a given IP address, retrieving all possible information about it (region, city, postal address, etc.). Although this information is quite accurate, sometimes it's not possible to get any data about a specific IP, this can happen due to many reasons, but normally is because of security reasons.
+
+\subsubsection{"*** Request timed out" hops}
+
+\tab If we look at the Figure \underline{\ref{tracerouteUA}}, we can see that, on hop 13, there was a "Request timed out", this probably happened because some routers won't answer to ICMP requests, and this is made on purpose. If we could see all the routers, the path could be compromised, because there may be some key routers on the connection, and, if attacked, those situations could cause serious security problems on the path.
+
+A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed Denial-of-Service} attack, commonly referred as Ping flood attack, is a DoS\footnote{Denial-of-Service} attack in which a large number of ICMP echo requests (pings) are sent to a specific device by an attacker, with the intention of overwhelming it. By flooding the device with this packages, it becomes unapproachable to normal traffic. Being distributed, it means that the attacks to a target come from multiple devices.
+
+\subsubsection{\textit{traceroute} logs variation during time}
+
+\tab For each location (University of Aveiro and my home), there were executed multiple \textit{traceroute} commands. Analysing the obtained results, there are some differences between logs from the same network, when executed at different times. This difference can be because, at a specific time, specific path can have a lot of load due to a large number of requests, so, other requests made are sent trough other routers, in a way that makes the connection as efficient as possible.
 
 
 
-
+\section{Conclusion}
 
 % Add "References" to table of contents
 \addcontentsline{toc}{section}{References}
