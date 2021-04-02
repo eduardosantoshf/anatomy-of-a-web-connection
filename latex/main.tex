@@ -110,18 +110,18 @@
 
 \section{Introductory Note}
 
-\tab This assignment consists in the use of the \textit{traceroute} command followed by the domain "www.cmu.edu", and interpreting the results obtained.  
+\tab This assignment consists in the use of the \textit{traceroute} command followed by the domain ""www.cmu.edu"", and interpreting the results obtained.  
 
 \noindent The specific objectives of this assignment are the following:
 
 \begin{itemize}
-    \item To provide a plausible identification of the technologies, processes, actors and business models involved in an web connection.
-    \item To identify possible social and economic implications associated with the identified technologies, processes, actors and business models.
+    \item Identify the technologies, processes, actors and business models involved in an web connection;
+    \item Identify possible social and economic implications associated with the points above mentioned.
 \end{itemize}
 
 \section{Summary / Abstract}
 
-\tab This assignment addresses things that can happen during a web connection.
+\tab This assignment is related to what can happen during a web connection.
 
 Using the \textit{traceroute} command, we will be able to analyze how a web connection works, and the path that the packages take in that connection.
 From that analysis, we will be able to reach a conclusion about the previously referred paths, and the hops of the connection, referring also the players involved in each hop.
@@ -134,7 +134,7 @@ The web as a major importance in our lives, without it, most of our daily common
 
 We can find an entire "world" inside our computers, smartphones, etc. This is only possible because there are many technologies, processes and actors involved, all of them through an abstract layer that hides the real complexity of the whole system. The operations inside that layer might have significant social and economic implications.
 
-\section{Protocols and mechanisms involved in a web connection}
+\section{Web connection: Protocols/Mechanisms involved}
 
 \tab In an Internet connection, there are 2 main participants: clients and servers.
 
@@ -143,9 +143,11 @@ When a client makes a request to access a specific webpage, the server responds 
 
 This is how a web connection works, at least at a very high-level. But there are many other parts involved in the connection. We will see a brief explanation of some of the mechanisms used during this connection.
 
+\newpage
+
 \subsection{Web browser}
 
-\tab A web browser is a software application that is used for accessing the WWW\footnote{World Wide Web}. When a user makes a request for a web page, the web browser responds with the content from a web server, displaying the same content on the user's device/machine. That content is transferred using the Hypertext Transfer Protocol, which defines how text, images and videos are transmitted through machines on the web. We will address this protocol later on.
+\tab A web browser is a software application. That application is used for accessing the WWW\footnote{World Wide Web}. When a user makes a request for a web page, the web browser responds with the content from a web server, displaying the same content on the user's device/machine. That content is transferred using the HTTP\footnote{Hypertext Transfer Protocol}, which defines how many types of media are transmitted through machines on the web. We will address this protocol later on.
 
 Websites save information about its users in files, those files are called cookies. They are stored in our computers for the next time we visit that website. For example, when we choose the option to store our username/email and password, that is made possible with the usage of cookies.
 
@@ -165,10 +167,10 @@ A web browser should not be confused with a search engine, the last one being a 
 Architecturally speaking, TCP/IP can be divided into a four-layer model, which consists in the following layers:
 
 \begin{itemize}
-    \item \textbf{Application layer} - scope within which applications, or processes, create user data and communicate this data to other applications, this can be done on the same host, or on a different one;
+    \item \textbf{Application layer} - In this layer, applications/processes create user data, communicating this to other applications. This can be done on the same host, or on a different one;
     \item \textbf{Transport layer} - performs host-to-host communications, this communications can be on the local network, as well as on remote networks (separated by routers);
-    \item \textbf{Internet layer} - provides a uniform networking interface that hides the actual topology of the underlying network connections;
-    \item \textbf{Link layer} - defines the networking methods within the scope of the local network link on which hosts communicate, this is done without routers.
+    \item \textbf{Internet layer} - provides a uniform networking interface, hiding the actual topology of the underlying network connections;
+    \item \textbf{Link layer} - defines the networking methods in the local network link on which hosts communicate, this is done without routers.
 \end{itemize}
 
 \newpage
@@ -192,19 +194,19 @@ An IP address is an unique address that identifies a device on the Internet or a
 
 \subsection{HTTP}
 
-\tab HTTP\footnote{Hypertext Transfer Protocol} is an application-layer protocol used when transmitting hypermedia documents (such as HTML\footnote{Hypertext Markup Language}). It was designed for communications between web browsers and web servers, although it can be used for other purposes. 
+\tab HTTP is an application-layer protocol used when transmitting hypermedia documents (such as HTML\footnote{Hypertext Markup Language}). Its main purpose is to provide communications between web browsers and web servers, although it can be used for other ones. 
 
-This protocol follows a client-server model, a client opens a connection and makes a request, then waits to receive the response. Being a stateless protocol, the server doesn't store any data between two requests.
+This protocol follows a client-server model: a client opens a connection and makes a request, then waits to receive the response. Being a stateless protocol, the server doesn't store any data between two requests.
 
-\section{Traceroute command}
+\section{What is the \textit{traceroute} command?}
 
-\tab Traceroute is a network diagnostic tool used for real-time tracking of the path taken by a packet on an IP network, from source to destination. This tool also reports the IP addresses of all the routers it pinged in between, recording also the time taken for each hop the packet makes during its route.
+\tab Traceroute is a network diagnostic tool used for real-time tracking of the path taken by a packet on an IP network, from the beginning till the end. This tool also reports the IP addresses of all the routers that are on its path, showing also the time taken for each hop made by the packet during its route.
 
-Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo packets with variable TTL\footnote{Time To Live}. For accuracy aspects, each hop is queried usually three times to better measure the response. 
+Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo packets with a TTL\footnote{Time To Live} that varies. For accuracy aspects, each hop is (usually) queried three times, to better measure the response. 
 
 \newpage
 
-\subsection{Executing the \textit{traceroute} command}
+\subsection{Executing the command}
 
 \tab Executing the command \textit{traceroute -I www.cmu.edu}, we obtain the following output:
 
@@ -224,9 +226,9 @@ Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo p
 
 The \textit{-I} parameter was used because, instead UDP\footnote{User Datagram Protocol}, what we wanted is to use ICMP echo, to prevent getting to many "Request Timed Out" messages. 
 
-The ICMP echo requests and the ICMP echo reply messages are commonly known as ping messages. Ping is a computer network administration software utility and is used to test if a host is reachable on an IP network. This utility operates by sending this ICMP echo request packets to the target host and waiting for it to reply through an ICMP echo reply.
+The ICMP echo requests and the ICMP echo reply messages are commonly known as ping messages. Ping is a computer network administration software utility and is used to test if a host is reachable on an IP network. This utility works by sending this ICMP echo request packets to the target host, waiting for it to reply through an ICMP echo reply.
 
-\subsection{Detailed interpretation of the executed command's results}
+\subsection{Interpretation of the executed command's results}
 
 \vspace*{\fill}
     \begin{center}
@@ -255,7 +257,7 @@ A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed
 
 By flooding the device with this packages, it becomes unapproachable to normal traffic. Being distributed, it means that the attacks to a target come from multiple devices.
 
-\subsubsection{\textit{traceroute} logs variation during time}
+\subsubsection{Logs variation during time}
 
 \tab For each location (University of Aveiro and my home), there were executed multiple \textit{traceroute} commands. Analysing the obtained results, there are some differences between logs from the same network, when executed at different times. 
 
@@ -265,7 +267,7 @@ To avoid this situation, new requests are sent through other routers, in a way t
 
 \newpage
 
-\section{Social and Economic implications}
+\section{Social/Economic implications}
 
 \tab The Internet has undoubtedly brought a window to the entire world, all through a computer screen, and fact that such a small window can display so much information is surprising.
 
@@ -281,7 +283,7 @@ Because of this significant increase in the load of the web, the players involve
 
 \section{Conclusion}
 
-\tab With this assigment, we were able to see the path that taken by a connection to the domain \textit{www.cmu.edu}, and covered many other aspects that are present in it, like the technologies, processes, actors and business models.
+\tab With this assigment, we were able to see the path that taken by a connection to the domain "www.cmu.edu", and covered many other aspects that are present in it, like the technologies, processes, actors and business models.
 
 We could also get an overview of how some technologies/tools involved in a web connections work. 
 
