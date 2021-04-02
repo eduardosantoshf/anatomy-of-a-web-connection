@@ -106,6 +106,8 @@
 
 \titlelabel{\thetitle.\quad}	
 
+\newpage
+
 \section{Introductory Note}
 
 \tab This assignment consists in the use of the \textit{traceroute} command followed by the domain "www.cmu.edu", and interpreting the results obtained.  
@@ -169,6 +171,8 @@ Architecturally speaking, TCP/IP can be divided into a four-layer model, which c
     \item \textbf{Link layer} - defines the networking methods within the scope of the local network link on which hosts communicate, this is done without routers.
 \end{itemize}
 
+\newpage
+
 \subsection{DNS} 
 
 \tab DNS\footnote{Domain Name System} is a naming system for computers, services, or other resources connected to the Internet, although it can also be done in a private network.
@@ -198,7 +202,7 @@ This protocol follows a client-server model, a client opens a connection and mak
 
 Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo packets with variable TTL\footnote{Time To Live}. For accuracy aspects, each hop is queried usually three times to better measure the response. 
 
-However, Traceroute messages are often blocked in the Internet by routers, making this tool very inaccurate in some cases.
+\newpage
 
 \subsection{Executing the \textit{traceroute} command}
 
@@ -231,7 +235,7 @@ The ICMP echo requests and the ICMP echo reply messages are commonly known as pi
 \vspace*{\fill}
 
 \vspace*{\fill}
-    \begin{figure}[t]
+    \begin{figure}
         \includegraphics[width=1 \textwidth]{images/traceroute_part2.png}
         \caption{Table containing details of the \textit{traceroute} command paths, for both University of Aveiro and home networks}
     \end{figure}
@@ -239,21 +243,51 @@ The ICMP echo requests and the ICMP echo reply messages are commonly known as pi
 
 \subsubsection{Identifying the local of each IP address}
 
-\tab To identify the local of an IP address, a tool called \textit{IP Tracker} was used. This tool, which can be accessed through the web, tracks/traces a given IP address, retrieving all possible information about it (region, city, postal address, etc.). Although this information is quite accurate, sometimes it's not possible to get any data about a specific IP, this can happen due to many reasons, but normally is because of security reasons.
+\tab To identify the local of an IP address, a tool called \textit{IP Tracker} was used. This tool, which can be accessed through the web, tracks/traces a given IP address, retrieving all possible information about it (region, city, postal address, etc.).
+
+Although this information is quite accurate, sometimes it's not possible to get any data about a specific IP, this can happen due to many reasons, but normally is because of security reasons.
 
 \subsubsection{"*** Request timed out" hops}
 
 \tab If we look at the Figure \underline{\ref{tracerouteUA}}, we can see that, on hop 13, there was a "Request timed out", this probably happened because some routers won't answer to ICMP requests, and this is made on purpose. If we could see all the routers, the path could be compromised, because there may be some key routers on the connection, and, if attacked, those situations could cause serious security problems on the path.
 
-A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed Denial-of-Service} attack, commonly referred as Ping flood attack, is a DoS\footnote{Denial-of-Service} attack in which a large number of ICMP echo requests (pings) are sent to a specific device by an attacker, with the intention of overwhelming it. By flooding the device with this packages, it becomes unapproachable to normal traffic. Being distributed, it means that the attacks to a target come from multiple devices.
+A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed Denial-of-Service} attack, commonly referred as Ping flood attack, is a DoS\footnote{Denial-of-Service} attack in which a large number of ICMP echo requests (pings) are sent to a specific device by an attacker, with the intention of overwhelming it. 
+
+By flooding the device with this packages, it becomes unapproachable to normal traffic. Being distributed, it means that the attacks to a target come from multiple devices.
 
 \subsubsection{\textit{traceroute} logs variation during time}
 
-\tab For each location (University of Aveiro and my home), there were executed multiple \textit{traceroute} commands. Analysing the obtained results, there are some differences between logs from the same network, when executed at different times. This difference can be because, at a specific time, specific path can have a lot of load due to a large number of requests, so, other requests made are sent trough other routers, in a way that makes the connection as efficient as possible.
+\tab For each location (University of Aveiro and my home), there were executed multiple \textit{traceroute} commands. Analysing the obtained results, there are some differences between logs from the same network, when executed at different times. 
 
+This difference can be because, at a specific time, specific path can have a lot of load due to a large number of requests. This will significantly increase the latency of the entire connection, which is something to avoid.
 
+To avoid this situation, new requests are sent through other routers, in a way that makes the connection as efficient as possible.
+
+\newpage
+
+\section{Social and Economic implications}
+
+\tab The Internet has undoubtedly brought a window to the entire world, all through a computer screen, and fact that such a small window can display so much information is surprising.
+
+None of this would be possible without the technologies mentioned above. These have changed the way we look at the world, and have shown us that knowledge has no end. And we cannot just refer to knowledge, there are a multitude of aspects that the Internet has brought us, and ease of communication is another very important one.
+
+Another thing to mention is the amount of technologies, processes, actors and business models that are involved in a "simple" connection to a given domain, as in this case the CMU\footnote{Carnegie Mellon University}.
+
+From this large number of participants, we can conclude that there are many aspects that can affect a connection, from physical aspects - connection problems, problems with routers - to aspects more related to the economic/social part - network companies and their ups and lows in the market, social crises that can lead to a greater load on the network, etc.
+
+Due to the COVID-19 global pandemic, in the last year we have felt these same economic and social changes and how much this can affect, in this case, the Internet and its stakeholders. Due to the massive number of people who are forced to stay at home, to all jobs that were once in a enterprise environment and are now from home, among other aspects, the Internet has suffered a huge load of requests-responses, something that clearly has its repercussions.
+
+Because of this significant increase in the load of the web, the players involved in the connections, in this case the network companies, had to take steps to scale their services, so that the world would not stop, at least due to the lack of this precious resource, that is the Internet.
 
 \section{Conclusion}
+
+\tab With this assigment, we were able to see the path that taken by a connection to the domain \textit{www.cmu.edu}, and covered many other aspects that are present in it, like the technologies, processes, actors and business models.
+
+We could also get an overview of how some technologies/tools involved in a web connections work. 
+
+To conclude, we made an assumptions of social and economic implications that can affect an entire connection.
+
+\newpage
 
 % Add "References" to table of contents
 \addcontentsline{toc}{section}{References}
