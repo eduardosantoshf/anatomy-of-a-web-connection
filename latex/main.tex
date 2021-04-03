@@ -224,7 +224,7 @@ Traceroute normally uses ICMP\footnote{Internet Control Message Protocol} echo p
 \end{figure}
 
 
-The \textit{-I} parameter was used because, instead UDP\footnote{User Datagram Protocol}, what we wanted is to use ICMP echo, to prevent getting to many "Request Timed Out" messages. 
+The \textit{-I} parameter was used because, instead UDP\footnote{User Datagram Protocol}, what we wanted is to use ICMP echo, to prevent getting too many "Request Timed Out" messages. 
 
 The ICMP echo requests and the ICMP echo reply messages are commonly known as ping messages. Ping is a computer network administration software utility and is used to test if a host is reachable on an IP network. This utility works by sending this ICMP echo request packets to the target host, waiting for it to reply through an ICMP echo reply.
 
@@ -247,13 +247,13 @@ The ICMP echo requests and the ICMP echo reply messages are commonly known as pi
 
 \tab To identify the local of an IP address, a tool called \textit{IP Tracker} was used. This tool, which can be accessed through the web, tracks/traces a given IP address, retrieving all possible information about it (region, city, postal address, etc.).
 
-Although this information is quite accurate, sometimes it's not possible to get any data about a specific IP, this can happen due to many reasons, but normally is because of security reasons.
+Although this information is quite accurate, sometimes it's not possible to get any data about a specific IP, this can happen due to many reasons, but normally is because of security ones.
 
 \subsubsection{"*** Request timed out" hops}
 
 \tab If we look at the Figure \underline{\ref{tracerouteUA}}, we can see that, on hop 13, there was a "Request timed out", this probably happened because some routers won't answer to ICMP requests, and this is made on purpose. If we could see all the routers, the path could be compromised, because there may be some key routers on the connection, and, if attacked, those situations could cause serious security problems on the path.
 
-A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed Denial-of-Service} attack, commonly referred as Ping flood attack, is a DoS\footnote{Denial-of-Service} attack in which a large number of ICMP echo requests (pings) are sent to a specific device by an attacker, with the intention of overwhelming it. 
+A possible attack could be, for example, an ICMP flood DDoS\footnote{Distributed Denial-of-Service} attack, commonly referred as Ping flood attack. This is a DoS\footnote{Denial-of-Service} attack in which a large number of ICMP echo requests (pings) are sent to a specific device by an attacker, with the intention of overwhelming it. 
 
 By flooding the device with this packages, it becomes unapproachable to normal traffic. Being distributed, it means that the attacks to a target come from multiple devices.
 
@@ -269,7 +269,7 @@ To avoid this situation, new requests are sent through other routers, in a way t
 
 \section{Social/Economic implications}
 
-\tab The Internet has undoubtedly brought a window to the entire world, all through a computer screen, and fact that such a small window can display so much information is surprising.
+\tab The Internet has undoubtedly brought a window to the entire world, all through a computer screen, and the fact that such a small window can display so much information is surprising.
 
 None of this would be possible without the technologies mentioned above. These have changed the way we look at the world, and have shown us that knowledge has no end. And we cannot just refer to knowledge, there are a multitude of aspects that the Internet has brought us, and ease of communication is another very important one.
 
