@@ -1,4 +1,4 @@
-# APSEIFirstProject
+# APSEI First Project
 
 This assignment consists in the use of the traceroute command followed by the domain ”www.cmu.edu”, and interpreting the results obtained.
 
