@@ -9,5 +9,8 @@ The specific objectives of this assignment are the following:
 ## Course
 This project was developed under the [Professional and Social Aspects of Computer Science](https://www.ua.pt/en/uc/12271) course of [University of Aveiro](https://www.ua.pt/).
 
+## Grade 
+This project's grade was **17** out of 20.
+
 ## Authors
 * **Eduardo Santos**: [eduardosantoshf](https://github.com/eduardosantoshf)
